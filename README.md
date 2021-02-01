@@ -1,6 +1,6 @@
 # simple calculator
 
-## how to use
+## how to build
 
 ```bash
 mkdir build
