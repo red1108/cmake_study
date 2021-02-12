@@ -26,10 +26,8 @@ jobs:
       with:
         submodules: true
     - name: Configure Build
-      run: mkdir build && cd build && cmake -DCMAKE_GENERATOR_PLATFORM=x64 -DCMAKE_BUILD_TYPE=Release ..
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      run: mkdir build && cd build && cmake ..
     - name: Build
-      run: cd build && MSBuild.exe doctest.sln /p:Configuration=Release
+      run: cd build && cmake --build .
     - name: Run Unit Test
       run: /a/doctest/doctest/build/Debug/main.exe
