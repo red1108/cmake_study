@@ -11,11 +11,11 @@ target_include_directories(calc_lib
        ${PROJECT_SOURCE_DIR}/include
 )
 
-add_executable(main
+add_executable(cale_exe
     src/main.cpp
 )
 
-target_link_libraries(main
+target_link_libraries(calc_exe
     PRIVATE
         calc_lib
 )
