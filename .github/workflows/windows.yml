@@ -33,5 +33,5 @@ jobs:
       run: cd build && MSBuild.exe first_practice.sln /p:Configuration=Release
     - name: Run Unit Test
       run: |
-           tree
+           dir /b
            /a/first_practice/first_practice/build/Release/calc_exe.exe
