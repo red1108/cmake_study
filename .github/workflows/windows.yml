@@ -30,8 +30,8 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
     - name: Build
-      run: cd build && MSBuild.exe first_practice.sln /p:Configuration=Release
+      run: cd build && MSBuild.exe doctest.sln /p:Configuration=Release
     - name: Run Unit Test
       run: |
-           dir /b
-           /a/first_practice/first_practice/build/Release/calc_exe.exe
+           dir
+           /a/doctest/doctest/build/Release/main.exe
