@@ -42,4 +42,4 @@ jobs:
     - name: Run Unit Test
       run: /home/runner/work/cmake_study/cmake_study/build/test/unit_test
     - name: Upload coverage to Codecov
-      run: bash <(curl -s https://codecov.io/bash) -h
+      run: bash <(curl -s https://codecov.io/bash)
