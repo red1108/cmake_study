@@ -55,4 +55,4 @@ jobs:
     - name: Build
       run: cd build && make
     - name: Run Unit Test
-      run: /home/runner/work/cmake_study/cmake_study/build/calc_exe
+      run: /home/runner/work/cmake_study/cmake_study/build/unit_test
