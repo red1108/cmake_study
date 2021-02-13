@@ -3,11 +3,14 @@ cmake_minimum_required(VERSION 3.6)
 # Include cmake modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake")
 
-add_compile_options(-std=c++14)
 project(doctest)
 
 # Set enable output of compile commands during generation
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# Includes
+include_directories(include)
+include_directories(lib)
 
 # Compile options
 include(CMake/CompileOptions.cmake)
@@ -20,23 +23,9 @@ endif()
 # Overrides
 set(CMAKE_MACOSX_RPATH ON)
 
-add_library(calc_lib
-    src/calc.cpp
-)
-
-target_include_directories(calc_lib
-    PUBLIC
-       ${PROJECT_SOURCE_DIR}/include
-)
-
-add_executable(calc_exe
-    src/main.cpp
-)
-
-target_link_libraries(calc_exe
-    PRIVATE
-        calc_lib
-)
+# Project modules
+add_subdirectory(src)
+add_subdirectory(test)
 
 # Code coverage - Debug only
 # NOTE: Code coverage results with an optimized (non-Debug) build may be misleading
